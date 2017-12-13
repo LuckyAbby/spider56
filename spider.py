@@ -8,7 +8,7 @@ def get_urls():
     res = requests.get(root_url)
     soup = bs4.BeautifulSoup(res.text, "html.parser")
     url_list = soup.find_all('div', class_='info')
-    print(url_list)
+    # print(url_list)
     for item in url_list:
         if item.find('div', class_='title'):
             title = item.a.attrs.get('title')

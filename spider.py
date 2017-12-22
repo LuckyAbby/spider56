@@ -13,10 +13,8 @@ def get_content():
     for item in url_list:
         if item.find('div', class_='title'):
             title = item.a.attrs.get('title')
-        print('title', title)
         if item.find('div', class_='address'):
             url = item.find('div', class_='address').string
-        print('url', url)
         insert_table(title, url)
 
 def insert_table(title, url):
